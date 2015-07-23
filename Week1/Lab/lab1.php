@@ -13,6 +13,8 @@
         <?php for($td = 1; $td <= 10; $td++):?>
             <td style="background-color:<?php $randColor = '#'.strtoupper(dechex(rand(0x000000, 0xFFFFFF))); echo $randColor;?>">
                 <?php echo $randColor; ?>
+                <br />
+                <span style="color:#FFF"><?php echo $randColor; ?>
             </td>
         <?php endfor; ?>
     </tr>

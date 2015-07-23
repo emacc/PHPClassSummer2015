@@ -19,8 +19,13 @@
         </table>
         <hr />
         
+        <?php
         
+        /*
+         * Table generator
+         */
         
+        ?>
         <table border ="1">
         <?php for($tr = 1; $tr <= 3; $tr++):?>
             <tr> 

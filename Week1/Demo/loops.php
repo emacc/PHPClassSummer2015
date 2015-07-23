@@ -5,8 +5,12 @@
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <ul>
+            <?php for ($index = 1; $index < 10; $index++) : ?>
+            
+            <li><?php echo $index;?></li>
+            
+            <?php endfor; ?>
+        </ul>
     </body>
 </html>

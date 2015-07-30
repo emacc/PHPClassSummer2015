@@ -6,6 +6,7 @@
     </head>
     <body>
         <?php
+        /* Connect to DB and include functions page */
             include './dbconnect1.php';
             include './functions.php';
             
@@ -13,9 +14,10 @@
             
             if (isPostRequest()) {
                 $db = getDatabase();
-                
+                /* Prepares insert statement into database and prepares variables */
                 $stmt = $db->prepare("INSERT INTO actors SET firstName = :firstname, lastName = :lastname, dob = :dob, height = :height");
                
+                /* Sets variables */
                 $firstName = filter_input(INPUT_POST, 'firstname');
                 $lastName = filter_input(INPUT_POST, 'lastname');
                 $dob = filter_input(INPUT_POST, 'dob');
@@ -27,6 +29,7 @@
                     ":height" => $height
                 );
                 
+                /* IF Executed correctly, sets results variable to "Data Added" */
                 if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                     $results = 'Data Added';
               
@@ -34,9 +37,10 @@
             }
         ?>
         
-         
+         <?php /* Display results variable: "Data Added" */?>
         <h1><?php echo $results; ?></h1>
- 
+         
+        <?php /* Form for entering data into database. # sign keeps user on the same page! */ ?>
         <form method="post" action="#">            
             First Name <input type="text" value="" name="firstname" />
             <br />

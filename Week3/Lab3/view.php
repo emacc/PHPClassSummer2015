@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
+    <body><center>
         <?php
         /* Connect to DB and include functions */
-        include './dbconnect.php';
+        include_once './dbconnect.php';
         include './functions.php';
 
         /* DB variable set to function */
@@ -25,27 +25,23 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th><h1>ID</h1></th>
         <th><h1>Corporation</h1></th>
-    <th colspan="2"><form action="add.php" method="post"><input type="submit" style="width:150px; height:55px" value="Add New Corporation" </td></form>
+    <th colspan="3"><!--<form action="add.php" method="post"><input type="submit" style="width:150px; height:55px" value="Add New Corporation" </td></form>-->
+            <a href="add.php">Click Here to <br/>Add A New Corporation</a>
 </tr>
 </thead>
 <tbody>
     <?php foreach ($results as $row): ?>
         <tr>
             <?php /* Displays database info */ ?>
-            <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['corp']; ?></td>
-            <td><form action="delete.php" method="post"><input type="submit" style="width:100px; height:25px" value="Delete"></td></form>
-            <td><form action="update.php" method="post"><input type="submit" style="width:100px; height:25px" value="Update"</td></form>
+            <td align="center"><a href="read.php?corp=<?php echo $row['corp']; ?>">Read</a></td>
+            <td align="center"><a href="delete.php?corp=<?php echo $row['corp']; ?>">Delete</a></td>
+            <td align="center"><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
         </tr>
     <?php endforeach; ?>
 </tbody>
 </table>
-
-<form action="update.php"method="post">
-    <input type="submit" value="Update"/>
-</form>
-<input type="submit" style="width:500px" value="Delete">
+    </center>
 </body>
 </html>

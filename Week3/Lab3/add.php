@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
+    <body><center>
         <?php
         /* Connect to DB and include functions page */
-        include './dbconnect.php';
+        include_once './dbconnect.php';
         include './functions.php';
 
         $results = '';
@@ -15,18 +15,21 @@
         if (isPostRequest()) {
             $db = dbconnect();
             /* Prepares insert statement into database and prepares variables */
-            $stmt = $db->prepare("INSERT INTO corps SET firstName = :firstname, lastName = :lastname");
+            $stmt = $db->prepare("INSERT INTO corps SET corp = :corp, incorp_dt = now(), email = :email, zipcode = :zipcode, owner = :owner, phone = :phone");
 
             /* Sets variables */
-            $firstName = filter_input(INPUT_POST, 'firstname');
-            $lastName = filter_input(INPUT_POST, 'lastname');
-            $dob = filter_input(INPUT_POST, 'dob');
-            $height = filter_input(INPUT_POST, 'height');
+            $corp = filter_input(INPUT_POST, 'corp');
+            $email = filter_input(INPUT_POST, 'email');
+            $zipcode = filter_input(INPUT_POST, 'zipcode');
+            $owner = filter_input(INPUT_POST, 'owner');
+            $phone = filter_input(INPUT_POST, 'phone');
+
             $binds = array(
-                ":firstname" => $firstName,
-                ":lastname" => $lastName,
-                ":dob" => $dob,
-                ":height" => $height
+                ":corp" => $corp,
+                ":email" => $email,
+                ":zipcode" => $zipcode,
+                ":owner" => $owner,
+                ":phone" => $phone
             );
 
             /* IF Executed correctly, sets results variable to "Data Added" */
@@ -41,15 +44,22 @@
 
         <?php /* Form for entering data into database. # sign keeps user on the same page! */ ?>
         <form method="post" action="#">            
-            First Name <input type="text" value="" name="firstname" />
+            <h4>Corporation Name <input type="text" value="" name="corp" /></h4>
+
+            <h4 style="margin-left: 83px;">Email <input style="margin-left: 5px;" type="text" value="" name="email" /></h4>
+
+            <h4 style="margin-left: 63px;">Zip Code<input style="margin-left: 8px;" type="text" value="" name="zipcode" /></h4>
+           
+            <h4 style="margin-left: 78px;">Owner <input style="margin-left: 5px;" type="text" value="" name="owner" /></h4>
+          
+             <h4 style="margin-left: 22px;">Phone Number <input style="margin-left: 5px;" type="text" value="" name="phone" /></h4>
+            
             <br />
-            Last Name <input type="text" value="" name="lastname" />
-            <br />           
-            Date of Birth <input type="date" value="" name="dob" />
-            <br />  
-            Height <input type="text" value="" name="height" />
-            <br />  
             <input type="submit" value="Submit" />
         </form>
-    </body>
+        <br />
+
+        <a href="view.php"> Go back </a>
+    </center>         
+</body>
 </html>

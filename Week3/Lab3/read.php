@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <title>Read Corporation</title>
     </head>
     <body><center>
         <?php
@@ -34,7 +35,7 @@
         }
         ?>
 
-         <table border="1">
+         <table class="table-hover" border="2">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -51,13 +52,13 @@
                <?php /* Displays database info */?>
                 <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['corp']; ?></td>
-                <td><?php echo $row['incorp_dt']; ?></td>
+                <td><?php echo date("m/d/Y",strtotime($row['incorp_dt'])); ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['zipcode']; ?></td>
                 <td><?php echo $row['owner']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
-                <td align="center"><a href="delete.php?corp=<?php echo $row['corp']; ?>">Delete</a></td>
-                <td align="center"><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
+                <td align="center"><a class="col-lg-12" href="delete.php?corp=<?php echo $row['corp']; ?>">Delete</a></td>
+                <td align="center"><a class="col-lg-12" href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
             </tr>
         <?php endforeach; ?>
         </table>

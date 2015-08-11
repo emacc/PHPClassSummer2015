@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <title>Add Corporation</title>
     </head>
     <body><center>
         <?php
@@ -49,13 +50,13 @@
             <h4 style="margin-left: 83px;">Email <input style="margin-left: 5px;" type="text" value="" name="email" /></h4>
 
             <h4 style="margin-left: 63px;">Zip Code<input style="margin-left: 8px;" type="text" value="" name="zipcode" /></h4>
-           
+
             <h4 style="margin-left: 78px;">Owner <input style="margin-left: 5px;" type="text" value="" name="owner" /></h4>
-          
-             <h4 style="margin-left: 22px;">Phone Number <input style="margin-left: 5px;" type="text" value="" name="phone" /></h4>
-            
+
+            <h4 style="margin-left: 22px;">Phone Number <input style="margin-left: 5px;" type="text" value="" name="phone" /></h4>
+
             <br />
-            <input type="submit" value="Submit" />
+            <input class="btn-toolbar" type="submit" value="Submit" />
         </form>
         <br />
 

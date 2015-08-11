@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <title>Update Corporation</title>
     </head>
     <body><center>
         <?php
@@ -91,7 +92,7 @@
 
         <br />
         <input type="hidden" name="id" value="<?php echo $id ?>" />
-        <input type="submit" value="Submit" />
+        <input class="btn-toolbar" type="submit" value="Submit" />
         </form>
         <br/><br/>
         <a href ="view.php">Go Back</a>

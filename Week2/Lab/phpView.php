@@ -11,10 +11,10 @@
             include './functions.php';
         
         /* DB variable set to function */
-            $db = getDatabase();
+            $db = dbconnect();
             
         /* Select statement for view */    
-            $stmt = $db->prepare("SELECT * FROM actors");
+            $stmt = $db->prepare("SELECT * FROM corps");
             $results = array();            
             if ($stmt->execute() && $stmt->rowCount() > 0) {
                 $results = $stmt->fetchALL(PDO::FETCH_ASSOC);                

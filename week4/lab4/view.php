@@ -14,18 +14,21 @@
            include_once './functions/util.php';
            include './includes/form1.php';
            
+           $db = dbconnect();
+           
            $results = getAllCorpsData();
             
            if (isGetRequest() ) {
-                $db = dbconnect();
+               
                 $stmt = $db->prepare("SELECT * FROM corps ORDER BY $key");
-                
+              
                 $results = array();
                 if ($stmt->execute() && $stmt->rowCount() > 0) {
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
+                 
+            }
            
-           }
 
 
 /* $results = getAllTestData(); 

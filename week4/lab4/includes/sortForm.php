@@ -28,7 +28,7 @@
     <input type="hidden" name="action" value="sort" />
     <input type="submit" value="Submit" />
     
-    <input type="hidden" name="action" value="clear" />
+    <input type="hidden" name="action2" value="clear" />
     <input type="reset" value="Reset" />
         
     

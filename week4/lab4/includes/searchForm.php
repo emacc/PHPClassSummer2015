@@ -1,7 +1,7 @@
 <form action="#" method="get">
      <fieldset>
     <label>Search table by:</label>  
-    <select name="orderByColumn">
+    <select name="searchColumn">
         <?php  
         $getColumn = array("id" => 'ID',
                     "corp" => 'Corporation',
@@ -20,10 +20,12 @@
 <br/>
 
    
-        <input name="dataone" type="search" placeholder="Search...." />
-        <input name="datatwo" value="data2" type="hidden" />
+        <input name="searchQuery" type="search" placeholder="Search...." />
     
-         <input type="hidden" name="action" value="search" />
+        <input type="hidden" name="action" value="search" />
         <input type="submit" value="Submit" />
+        
+        <input type="hidden" name="action2" value="clear" />
+        <input type="reset" value="Reset" />
     </fieldset>            
 </form>

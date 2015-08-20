@@ -25,38 +25,25 @@ function searchCorps($column, $search){
         ":search" => $search
     );
     $results = array();
+    $searchMessage = "Search failed to return results.";
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $numRows = count($results);
+        $searchMessage = "Search returned $numRows results!";
     }
-    return $results;
-}
-
-/* Order View page based on selection of column name */
-/*function orderByColumn() {
-        
-    include_once './functions/dbconnect.php';
-
-    $db = dbconnect();
    
-    $getColumn = array(   "id" => 'ID',
-                          "corp" => 'Corporation',
-                          "incorp_dt" => 'Incorporation Date',
-                          "email" => 'Email',
-                          "zipcode" => 'Zip Code',
-                          "owner" => 'Owner',
-                          "phone" => 'Phone'
-                        );
-    
-    
-    $stmt = $db->prepare("SELECT * FROM corps ORDER BY $getColumn");
-    
-    $results = array();
-    
-    if ($stmt->execute() && $stmt->rowCount() > 0) {
-          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      }
-    
+    echo $searchMessage;
     return $results;
+   
 }
-*/          
-      
+
+function columnsDropDown() {
+       $getColumn = array("id" => 'ID',
+              "corp" => 'Corporation',
+              "incorp_dt" => 'Incorporation Date',
+              "email" => 'Email',
+              "zipcode" => 'Zip Code',
+              "owner" => 'Owner',
+              "phone" => 'Phone',
+        );
+}

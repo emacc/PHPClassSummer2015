@@ -9,6 +9,7 @@
         
            include_once './functions/dbconnect.php';
            include_once './functions/dbData.php';
+           include './includes/form2.php';
             
           /* $results = getAllTestData(); */
            

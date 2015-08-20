@@ -18,10 +18,14 @@
            $db = dbconnect();
            
            $results = getAllCorpsData();
+           
+           $action = filter_input(INPUT_GET, 'action');
+            
            if (isGetRequest() ) {
                 $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
                 $sortOrder = filter_input(INPUT_GET, 'sortOrder');
-              if (!empty($orderByColumn)){
+            
+                if (!empty($orderByColumn)){
                   
                     $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
 
@@ -31,22 +35,17 @@
                     }
                 }
             }
-           
-//             if ( $action === 'search' ) {
-//                 $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
-//                 searchCorps($column, $search);
-//                 $column = $orderByColumn;
-//                }
-
-/* $results = getAllTestData(); 
-           
-           $column = 'datatwo';
-           $search = 'test'; */
-           
             
+           
+           
+             if ( $action === 'search' ) {
+                 $column = filter_input(INPUT_GET, 'searchColumn');
+                 $search = filter_input(INPUT_GET, 'searchQuery');
+                 $results = searchCorps($column, $search);
+                 
+                }
+                
         ?>
-        
-        
         <table border="1">
             <thead>
                 <tr>
@@ -59,6 +58,7 @@
                     <th>Phone</th>
                 </tr>
             </thead>
+            
             <tbody>
             <?php foreach ($results as $row): ?>
                 <tr>

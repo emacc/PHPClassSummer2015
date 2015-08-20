@@ -18,16 +18,17 @@
            $db = dbconnect();
            
            $results = getAllCorpsData();
-           $action = filter_input(INPUT_POST, 'action');
-           
            if (isGetRequest() ) {
                 $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
                 $sortOrder = filter_input(INPUT_GET, 'sortOrder');
-                $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
-              
-                $results = array();
-                if ($stmt->execute() && $stmt->rowCount() > 0) {
-                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              if (!empty($orderByColumn)){
+                  
+                    $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
+
+                    $results = array();
+                    if ($stmt->execute() && $stmt->rowCount() > 0) {
+                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    }
                 }
             }
            

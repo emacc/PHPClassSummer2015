@@ -32,7 +32,7 @@ function searchCorps($column, $search){
 }
 
 /* Order View page based on selection of column name */
-function orderByColumn() {
+/*function orderByColumn() {
         
     include_once './functions/dbconnect.php';
 
@@ -58,5 +58,5 @@ function orderByColumn() {
     
     return $results;
 }
-          
+*/          
       

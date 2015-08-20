@@ -12,9 +12,7 @@ function getAllTestData(){
     return $results;
 }
 
-/*
- * $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
- */
+
 function searchTest($column, $search){
     $db = dbconnect();
            

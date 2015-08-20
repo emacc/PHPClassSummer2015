@@ -1,7 +1,8 @@
 <form action="#" method="get">
-    <label>Sort table by:</label>  
+     <fieldset>
+    <label>Search table by:</label>  
     <select name="orderByColumn">
-        <?php 
+        <?php  
         $getColumn = array("id" => 'ID',
                     "corp" => 'Corporation',
                     "incorp_dt" => 'Incorporation Date',
@@ -12,13 +13,17 @@
         );
         foreach ($getColumn as $key => $value):
         ?> 
-    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+    <option value="<?php echo $key; ?>">
+        <?php echo $value; ?></option>
         <?php endforeach; ?>
     </select>
+<br/>
+
+   
+        <input name="dataone" type="search" placeholder="Search...." />
+        <input name="datatwo" value="data2" type="hidden" />
     
-    <input type="hidden" name="action" value="Submit1" />
-    <input type="submit" value="Submit" />
-        
-    
-</fieldset>    
+         <input type="hidden" name="action" value="search" />
+        <input type="submit" value="Submit" />
+    </fieldset>            
 </form>

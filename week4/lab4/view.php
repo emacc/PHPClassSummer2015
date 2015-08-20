@@ -12,24 +12,30 @@
            include_once './functions/dbconnect.php';
            include_once './functions/dbData.php';
            include_once './functions/util.php';
-           include './includes/form1.php';
+           include './includes/sortForm.php';
+           include './includes/searchForm.php';
            
            $db = dbconnect();
            
            $results = getAllCorpsData();
-            
+           $action = filter_input(INPUT_POST, 'action');
+           
            if (isGetRequest() ) {
-               
-                $stmt = $db->prepare("SELECT * FROM corps ORDER BY $key");
+                $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
+                $sortOrder = filter_input(INPUT_GET, 'sortOrder');
+                $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
               
                 $results = array();
                 if ($stmt->execute() && $stmt->rowCount() > 0) {
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
-                 
             }
            
-
+//             if ( $action === 'search' ) {
+//                 $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
+//                 searchCorps($column, $search);
+//                 $column = $orderByColumn;
+//                }
 
 /* $results = getAllTestData(); 
            

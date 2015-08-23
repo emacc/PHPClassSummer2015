@@ -12,9 +12,6 @@ function getAllCorpsData(){
     return $results;
 }
 
-/*
- * $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
- */
 function searchCorps($column, $search){
     $db = dbconnect();
            
@@ -41,25 +38,26 @@ function searchCorps($column, $search){
 }
 
 function orderCorps(){
+    
     $db = dbconnect();
-    //if (!empty($orderByColumn))
-    {
-        $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
-        $sortOrder = filter_input(INPUT_GET, 'sortOrder');
-        $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
+    
+    
+    $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
+    $sortOrder = filter_input(INPUT_GET, 'sortOrder');
+    $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
 
-        $results = array();
-        $orderMessage = "Re-Order Failed!";
-        if ($stmt->execute() && $stmt->rowCount() > 0) {
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $orderMessage = "Re-Order Completed Successfully!";
-          }
+    $results = array();
+    $orderMessage = "Re-Order Failed!";
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $orderMessage = "Re-Order Completed Successfully!";
+      }
     ?>
     <p id="sortmsg">
         <?php echo $orderMessage; ?></p>
     <?php
         return $results;
-    }
+    
 }
 
 

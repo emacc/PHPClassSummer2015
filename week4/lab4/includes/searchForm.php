@@ -1,18 +1,20 @@
 <div class="floatright">
+    
+<!-- creates form using get method(URL) -->
 <form action="#" method="get">
      <fieldset>
     <label id="searchlbl">Search table by:</label>  
+    
+    <!-- <select> creates a drop down menu -->
     <select id="searchdropdwn" name="searchColumn">
         <?php  
+        
+          /* drop down options are created using associative array, 
+           * created in function "columnsDropDown()"
+           */
           $getColumn = columnsDropDown();
-//        $getColumn = array("id" => 'ID',
-//                    "corp" => 'Corporation',
-//                    "incorp_dt" => 'Incorporation Date',
-//                    "email" => 'Email',
-//                    "zipcode" => 'Zip Code',
-//                    "owner" => 'Owner',
-//                    "phone" => 'Phone',
-//        );
+
+          // uses key value pair from array to populate the dropdown menu
         foreach ($getColumn as $key => $value):
         ?> 
     <option value="<?php echo $key; ?>">
@@ -21,13 +23,15 @@
     </select>
 <br/>
 
-   
+        <!-- creates search box, where "searchQuery" is obtained -->
         <input id="placeholder" name="searchQuery" type="search" placeholder="Search...." />
     <br/>
     
-    <input type="hidden" name="action2" value="clear" />
+        <!-- reset button -->
+        <input type="hidden" name="action2" value="reset" />
         <input class="btn-style2" type="reset" value="Reset" />
         
+        <!-- search submit button -->
         <input type="hidden" name="action" value="search" />
         <input class="btn-style2" type="submit" value="Submit" />
         

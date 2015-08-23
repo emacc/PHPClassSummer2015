@@ -2,9 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>        
+        <title></title> 
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
+   
     <body>
+         <div class="wrapper">
         <?php
         
             
@@ -21,32 +34,22 @@
            
            $action = filter_input(INPUT_GET, 'action');
             
-           if (isGetRequest() ) {
-                $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
-                $sortOrder = filter_input(INPUT_GET, 'sortOrder');
-            
-                if (!empty($orderByColumn)){
-                  
-                    $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
-
-                    $results = array();
-                    if ($stmt->execute() && $stmt->rowCount() > 0) {
-                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    }
-                }
+           if ($action === 'sort') {
+               
+               $results = orderCorps();
             }
             
            
            
              if ( $action === 'search' ) {
+                 
                  $column = filter_input(INPUT_GET, 'searchColumn');
                  $search = filter_input(INPUT_GET, 'searchQuery');
                  $results = searchCorps($column, $search);
-                 
                 }
-                
         ?>
-        <table border="1">
+             <img id="img1" src="002.png"/>
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -73,6 +76,7 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-           
+        </div>   
     </body>
+    
 </html>

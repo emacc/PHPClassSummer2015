@@ -1,16 +1,18 @@
+<div class="floatright">
 <form action="#" method="get">
      <fieldset>
-    <label>Search table by:</label>  
-    <select name="searchColumn">
+    <label id="searchlbl">Search table by:</label>  
+    <select id="searchdropdwn" name="searchColumn">
         <?php  
-        $getColumn = array("id" => 'ID',
-                    "corp" => 'Corporation',
-                    "incorp_dt" => 'Incorporation Date',
-                    "email" => 'Email',
-                    "zipcode" => 'Zip Code',
-                    "owner" => 'Owner',
-                    "phone" => 'Phone',
-        );
+          $getColumn = columnsDropDown();
+//        $getColumn = array("id" => 'ID',
+//                    "corp" => 'Corporation',
+//                    "incorp_dt" => 'Incorporation Date',
+//                    "email" => 'Email',
+//                    "zipcode" => 'Zip Code',
+//                    "owner" => 'Owner',
+//                    "phone" => 'Phone',
+//        );
         foreach ($getColumn as $key => $value):
         ?> 
     <option value="<?php echo $key; ?>">
@@ -20,12 +22,16 @@
 <br/>
 
    
-        <input name="searchQuery" type="search" placeholder="Search...." />
+        <input id="placeholder" name="searchQuery" type="search" placeholder="Search...." />
+    <br/>
     
-        <input type="hidden" name="action" value="search" />
-        <input type="submit" value="Submit" />
+    <input type="hidden" name="action2" value="clear" />
+        <input class="btn-style2" type="reset" value="Reset" />
         
-        <input type="hidden" name="action2" value="clear" />
-        <input type="reset" value="Reset" />
+        <input type="hidden" name="action" value="search" />
+        <input class="btn-style2" type="submit" value="Submit" />
+        
+        
     </fieldset>            
 </form>
+</div>

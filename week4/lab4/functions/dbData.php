@@ -32,13 +32,39 @@ function searchCorps($column, $search){
         $searchMessage = "Search returned $numRows results!";
     }
    
-    echo $searchMessage;
+    ?>
+    <p id="searchMsg">
+        <?php echo $searchMessage; ?></p>
+    <?php
     return $results;
    
 }
 
+function orderCorps(){
+    $db = dbconnect();
+    //if (!empty($orderByColumn))
+    {
+        $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
+        $sortOrder = filter_input(INPUT_GET, 'sortOrder');
+        $stmt = $db->prepare("SELECT * FROM corps ORDER BY $orderByColumn $sortOrder");
+
+        $results = array();
+        $orderMessage = "Re-Order Failed!";
+        if ($stmt->execute() && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $orderMessage = "Re-Order Completed Successfully!";
+          }
+    ?>
+    <p id="sortmsg">
+        <?php echo $orderMessage; ?></p>
+    <?php
+        return $results;
+    }
+}
+
+
 function columnsDropDown() {
-       $getColumn = array("id" => 'ID',
+      $dropdown = array("id" => 'ID',
               "corp" => 'Corporation',
               "incorp_dt" => 'Incorporation Date',
               "email" => 'Email',
@@ -46,4 +72,5 @@ function columnsDropDown() {
               "owner" => 'Owner',
               "phone" => 'Phone',
         );
+       return $dropdown;
 }

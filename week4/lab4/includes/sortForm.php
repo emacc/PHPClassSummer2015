@@ -1,15 +1,17 @@
-<form action="#" method="get">
-    <label>Sort table by:</label>  
-    <select name="orderByColumn">
-        <?php $orderByColumn = filter_input(INPUT_GET, 'orderByColumn');
-        $getColumn = array("id" => 'ID',
-                    "corp" => 'Corporation',
-                    "incorp_dt" => 'Incorporation Date',
-                    "email" => 'Email',
-                    "zipcode" => 'Zip Code',
-                    "owner" => 'Owner',
-                    "phone" => 'Phone',
-        );
+<div class="floatleft">
+<form id="sortform" action="#" method="get">
+    <label id="sortlbl">Sort table by:</label>  
+    <select id="sortdropdown" name="orderByColumn">
+        <?php 
+          $getColumn = columnsDropDown();
+//        $getColumn = array("id" => 'ID',
+//                    "corp" => 'Corporation',
+//                    "incorp_dt" => 'Incorporation Date',
+//                    "email" => 'Email',
+//                    "zipcode" => 'Zip Code',
+//                    "owner" => 'Owner',
+//                    "phone" => 'Phone',
+//        );
         foreach ($getColumn as $key => $value):
         ?> 
     <option value="<?php echo $key; ?>">
@@ -17,20 +19,20 @@
         <?php endforeach; ?>
     </select>
     
-   
+   <br/>
     <label>Sort Order:</label>  
-        <input type="radio" name="sortOrder" value="asc" >Ascending
+        <input class="radios" type="radio" name="sortOrder" value="asc" >Ascending
         <input type="radio" name="sortOrder" value="desc" >Descending
         <br/>
     
         
         
     <input type="hidden" name="action" value="sort" />
-    <input type="submit" value="Submit" />
+    <input class="btn-style" type="submit" value="Submit" />
     
     <input type="hidden" name="action2" value="clear" />
-    <input type="reset" value="Reset" />
-        
-    
+    <input class="btn-style" type="reset" value="Reset" />
+        <br/>
 </fieldset>    
 </form>
+</div>

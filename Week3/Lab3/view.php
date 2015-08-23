@@ -37,8 +37,8 @@
         <tr>
             <?php /* Displays database info */ ?>
             <td><?php echo $row['corp']; ?></td>
-            <td><a class="col-lg-12" href="read.php?corp=<?php echo $row['corp']; ?>">Read</a></td>
-            <td><a class="col-lg-12" href="delete.php?corp=<?php echo $row['corp']; ?>">Delete</a></td>
+            <td><a class="col-lg-12" href="read.php?id=<?php echo $row['id']; ?>">Read</a></td>
+            <td><a class="col-lg-12" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
             <td><a class="col-lg-12" href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
         </tr>
     <?php endforeach; ?>

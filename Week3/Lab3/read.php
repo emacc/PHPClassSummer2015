@@ -14,15 +14,15 @@
         /* POST and GET statements share database connect function */
         $db = dbconnect();
         
-        $corp = filter_input(INPUT_GET, 'corp');
+        $id = filter_input(INPUT_GET, 'id');
         
 
         /* statment selects from database */
-        $stmt = $db->prepare("SELECT * FROM corps WHERE corp = :corp");
+        $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
 
         /* binds results into array */
         $binds = array(
-            ":corp" => $corp
+            ":id" => $id
         );
 
         /* result = array */
@@ -38,13 +38,13 @@
          <table class="table-hover" border="2">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Corporation</th>
-                    <th>Incorporation Date</th>
-                    <th>Email</th>
-                    <th>Zip Code</th>
-                    <th>Owner</th>
-                    <th>Phone</th>
+                    <th>id</th>
+                    <th>corp</th>
+                    <th>incorp_dt</th>
+                    <th>email</th>
+                    <th>zipcode</th>
+                    <th>owner</th>
+                    <th>phone</th>
                 </tr>
             </thead>
         <?php foreach($results as $row): ?>

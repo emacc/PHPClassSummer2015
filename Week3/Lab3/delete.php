@@ -10,14 +10,14 @@
             
         include_once './dbconnect.php';
         
-        $corp = filter_input(INPUT_GET, 'corp');
+        $id = filter_input(INPUT_GET, 'id');
         
         $db = dbconnect();
            
-        $stmt = $db->prepare("DELETE FROM corps WHERE corp = :corp");
+        $stmt = $db->prepare("DELETE FROM corps WHERE id = :id");
            
         $binds = array(
-             ":corp" => $corp
+             ":id" => $id
         );
            
         $isDeleted = false;
@@ -27,7 +27,7 @@
         
         ?>
         
-        <h1> Record <?php echo $corp; ?>  
+        <h1> Record <?php echo $id; ?>  
             <?php if ( !$isDeleted ): ?>Not<?php endif; ?> 
             Deleted
         </h1>

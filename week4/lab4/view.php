@@ -59,7 +59,7 @@
                  $results = searchCorps($column, $search);
                 }
         ?>
-             <img id="img1" src="002.png"/>
+             <img id="img1" src="images/002.png"/>
              
         <!-- creates table header using sql table column names -->
         <table class="table table-hover">

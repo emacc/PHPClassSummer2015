@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            
+            <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Site Lookup</title>
     </head>
     <body>
-        <nav>
-            <a href ="urlentry.php">Home</a>
-            <a href ="siteLookup.php">Site Lookup</a>
+        <div class="wrapper">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="btn-lg"><a class="nav" href ="urlentry.php">Home</a></li>
+                <li role="presentation" class="btn-lg"><a class="nav" href ="siteLookup.php">Site Lookup</a></li>
+            </ul>
         </nav>
         <?php
             date_default_timezone_set('America/New_York');
@@ -53,7 +66,7 @@
             
         <form method="post" action="#">
  
-            <select name="site_id">
+            <select name="site_id" id="dropdown">
             <?php foreach ($sites as $row): ?>
                 
                 <option 
@@ -67,21 +80,22 @@
             <?php endforeach; ?>
             </select>
 
-            <input type="submit" value="Submit" />
+            <input class="btn-default btn-lg" type="submit" value="Submit" />
         </form>
             
         <?php if( isset($results) ): ?>
-            <p><h2><?php echo count($results); ?> Results found for <?php echo $row['site'];?><br/>
-           <?php echo " Retrieved on $date";?></h2></p>
-            <table border="1">        
+            <p><h3><?php echo count($results); ?> Link result(s) found for <?php echo $row['site'];?><br/>
+           <?php echo " Retrieved on $date";?></h3></p>
+            <table class="tableclass1">        
                 <tbody>
                 <?php foreach ($results as $row): ?>
                     <tr>
-                        <td><a href="<?php echo $row['link']; ?>" target="popup"/><?php echo $row['link']; ?></a></td> 
+                        <td><a class="tableclass1" href="<?php echo $row['link']; ?>" target="popup"/><?php echo $row['link']; ?></a></td> 
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         <?php endif; ?>
+    </div>
     </body>
 </html>

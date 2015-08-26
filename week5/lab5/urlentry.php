@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Home</title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            
+            <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
     <body>
-        <nav>
-            <a href ="urlentry.php">Home</a>
-            <a href ="siteLookup.php">Site Lookup</a>
+        <div class="wrapper">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="btn-lg"><a class="nav" href ="urlentry.php">Home</a></li>
+                <li role="presentation" class="btn-lg"><a class="nav" href ="siteLookup.php">Site Lookup</a></li>
+            </ul>
         </nav>
         
         <?php
@@ -109,12 +122,12 @@
         <?php endif; ?>
             
         <form method="post" action="#">
-            Enter URL:<input type="text" name="url" value="<?php echo $site; ?>" />
+            Enter URL to add to database:<input id="textinput" type="text" name="url" value="<?php echo $site; ?>" />
              <input type="hidden" name="action" value="submit" />
-            <input type="submit" value="Submit" />
+            <input class="btn-default btn-lg" type="submit" value="Submit" />
 
             <input type="hidden" name="action" value="reset" />
-            <input type="reset" value="Reset" />
+            <input class="btn-default btn-lg" type="reset" value="Reset" />
         </form>
             
             <br/>
@@ -123,7 +136,7 @@
             <br/>
             <br/>
             <?php if ($linkMatches != '' && $printSite != ''): ?>
-        <table border ="1">
+        <table class="tableclass1">
             <thead>
                 <tr>
                     <th>The following site was Added Successfully to the sites table</th>
@@ -136,7 +149,7 @@
         </table>
         
         <p>
-        <table border ="1">
+        <table class="tableclass1">
             <thead>
                 <tr>
                     <th>The following links were Added Successfully to the sitelinks table</th>
@@ -174,5 +187,6 @@
         <?php endforeach; ?>
             </tbody>
         </table> */ ?>
+    </div>
     </body>
 </html>

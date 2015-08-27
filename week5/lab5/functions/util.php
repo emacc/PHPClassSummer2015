@@ -17,3 +17,21 @@ function isPostRequest() {
 function isGetRequest() {
     return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'GET' );
 }
+
+function getSiteName ($site_id) {
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM sites WHERE site_id = :site_id");
+    
+            $siteName = '';
+             $binds = array(
+                ":site_id" => $site_id
+                );
+            
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+                $site = $stmt->fetch(PDO::FETCH_ASSOC);
+                $siteName = $site['site'];
+            }
+            
+            return $siteName;
+}

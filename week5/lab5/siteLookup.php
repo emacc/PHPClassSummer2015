@@ -84,7 +84,7 @@
         </form>
             
         <?php if( isset($results) ): ?>
-            <p><h3><?php echo count($results); ?> Link result(s) found for <?php echo $row['site'];?><br/>
+            <p><h3><?php echo count($results); ?> Link result(s) found for <?php echo getSiteName($site_id);?><br/>
            <?php echo " Retrieved on $date";?></h3></p>
             <table class="tableclass1">        
                 <tbody>

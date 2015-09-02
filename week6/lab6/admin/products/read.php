@@ -8,13 +8,13 @@
         <?php
         /* Connect to DB and include functions */
         include_once '../../functions/dbconnect.php';
-        include_once '../../functions/category-functions.php';
+        include_once '../../functions/products-functions.php';
         
         $db = dbconnect();
         
-        $category_id = filter_input(INPUT_GET, 'category_id');
+        $product_id = filter_input(INPUT_GET, 'product_id');
        
-        $results = getCategoryById();
+        $results = getProductById();
         ?>
 
          <table class="table-hover" border="2">
@@ -22,17 +22,22 @@
                 <tr>
                     <th>category_id</th>
                     <th>category</th>
+                    <th>price</th>
+                    <th>image</th>
                    
                 </tr>
             </thead>
         <?php foreach($results as $row): ?>
             <tr>
                <?php /* Displays database info */?>
-                <td><?php echo $row['category_id']; ?></td>
-                <td><?php echo $row['category']; ?></td>
-                <td><a href="delete.php?category_id=<?php echo $row['category_id']; ?>">Delete</a></td>
-                <td><a href="update.php?category_id=<?php echo $row['category_id']; ?>">Update</a></td>
-                </tr>
+                <td><?php echo $row['product_id']; ?></td>
+                <td><?php echo $row['product']; ?></td>
+                <td><?php echo $row['price']; ?></td>
+                <td><?php echo $row['image']; ?></td>
+               
+                <td><a href="delete.php?product_id=<?php echo $row['product_id']; ?>">Delete</a></td>
+                <td><a href="update.php?product_id=<?php echo $row['product_id']; ?>">Update</a></td>
+            </tr>
         <?php endforeach; ?>
         </table>
         <br/>

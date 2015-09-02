@@ -43,6 +43,8 @@
             <input type="submit" value="Submit" />
         </form>
         
+        <br/>
+        <a href ="index.php">Go Back</a>
         
     </body>
 </html>

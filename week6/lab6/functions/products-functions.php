@@ -24,10 +24,8 @@ function createProduct($category_id, $product, $price, $image ) {
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         return true;
     }
-     
+    
     return false;
-    
-    
 }
 
 function isValidProduct($value) {
@@ -43,3 +41,32 @@ function isValidPrice($value) {
     return true;
 }
 
+function getAllProducts() {
+    $db = dbconnect();
+    $stmt = $db->prepare("SELECT * FROM products");
+    $results = array();
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+     
+    return $results;
+    
+}
+
+function getProductById() {
+    $db = dbconnect();
+    
+    $product_id = filter_input(INPUT_GET, 'product_id');
+    
+    $stmt = $db->prepare("SELECT * FROM products WHERE product_id = :product_id");
+        $binds = array(
+            ":product_id" => $product_id
+        );
+        $results = array();
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        }
+     
+    return $results;
+    
+}

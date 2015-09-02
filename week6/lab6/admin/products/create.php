@@ -11,7 +11,7 @@
         include_once '../../functions/dbconnect.php';
         include_once '../../functions/category-functions.php';
         include_once '../../functions/products-functions.php';
-        include_once '../../functions/until.php';
+        include_once '../../functions/util.php';
         
         
         $categories = getAllCategories();
@@ -82,6 +82,9 @@
             <br />
             <input type="submit" value="Submit" />
         </form>
+        
+        <br/>
+        <a href ="index.php">Go Back</a>
         
         
         

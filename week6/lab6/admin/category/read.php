@@ -36,7 +36,7 @@
         <?php endforeach; ?>
         </table>
         <br/>
-        <a href ="index.php">Go Back</a>
+        <a href ="index.php">Go Back</a> <a href="../../admin/index.php">Admin Home</a>
 
     </center>
 </body>

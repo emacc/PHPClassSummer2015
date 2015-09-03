@@ -30,7 +30,10 @@
                     <?php /* Displays database info */ ?>
                     <td><?php echo $row['product']; ?></td>
                     <td><?php echo $row['price']; ?></td>
-                    <td><?php echo $row['image']; ?></td>
+                    <td><?php if ( empty($row['image']) ) : ?>
+                    No Image
+                <?php else: ?><img src="../../images/<?php echo $row['image']; ?>" width="100" height="100" /></td>
+               <?php endif; ?></td>
                     <td><a href="read.php?product_id=<?php echo $row['product_id']; ?>">Read</a></td>
                     <td><a href="delete.php?product_id=<?php echo $row['product_id']; ?>">Delete</a></td>
                     <td><a href="update.php?product_id=<?php echo $row['product_id']; ?>">Update</a></td>
@@ -38,6 +41,9 @@
             <?php endforeach; ?>
         </tbody>
         </table>
+            
+            <br/>
+        <a href="../../admin/index.php">Admin Home</a>
         </center>
    </body>
 </html>

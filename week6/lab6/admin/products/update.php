@@ -9,6 +9,7 @@
         /* Connect to DB and include functions */
        include_once '../../functions/dbconnect.php';
        include_once '../../functions/util.php';
+       include_once '../../functions/products-functions.php';
         
         /* POST and GET statements share database connect function */
         $db = dbconnect();
@@ -21,12 +22,16 @@
             
             $product_id = filter_input(INPUT_POST, 'product_id');
             $product = filter_input(INPUT_POST, 'product');
+            $price = filter_input(INPUT_POST, 'price');
+            $image = uploadProductImage();
             
-            $stmt = $db->prepare("UPDATE products SET product = :product WHERE product_id = :product_id");
+            $stmt = $db->prepare("UPDATE products SET product = :product, price = :price, image = :image WHERE product_id = :product_id");
             
             $binds = array(
                 ":product_id" => $product_id,
-                ":product" => $product
+                ":product" => $product,
+                ":price" => $price,
+                ":image" => $image
             );
             
             $message = 'Update Failed';
@@ -54,23 +59,32 @@
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
             $product = $results['product'];
+            $price = $results['price'];
+            $image = $results['image'];
         }
         ?>
 
-        <p>
+        <p><h2>
             <?php if (isset ($message)) {
                 echo $message;
             } ?>
+        </h2>
         </p>
         
-        <form method="post" action="#">
-        Product <input type="text" name="product" value="<?php echo $product ?>"/></h4>
-        <br />
+        <form method="post" action="#" enctype="multipart/form-data">
+        Product <input type="text" name="product" value="<?php echo $product ?>"/></h4><br />
+        Price <input type="text" name="price" value="<?php echo $price ?>"/></h4><br />
+        <?php if ( empty($image) ) : ?>
+                    No Image
+                <?php else: ?>
+        Current Image:<img src="../../images/<?php echo $image; ?>" width="100" height="100" /></td>
+        <?php endif; ?><br/>
+        Update Image <input type="file" name="upfile"/></h4><br />
         <input type="hidden" name="product_id" value="<?php echo $product_id ?>" />
         <input type="submit" value="Submit" />
         </form>
         <br/><br/>
-        <a href ="index.php">Go Back</a>
+        <a href ="index.php">Go Back</a> <a href="../../admin/index.php">Admin Home</a>
 
     </center>
 </body>

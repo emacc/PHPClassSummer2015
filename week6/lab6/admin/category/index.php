@@ -36,6 +36,9 @@
             <?php endforeach; ?>
         </tbody>
         </table>
+            
+        <br/>
+        <a href="../../admin/index.php">Admin Home</a>
         </center>
    </body>
 </html>

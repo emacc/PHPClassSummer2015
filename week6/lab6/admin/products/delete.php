@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
-        <title>Delete Corporation</title>
+        <title>Delete Product</title>
     </head>
     <body><center>
         <?php
@@ -32,7 +32,7 @@
             Deleted
         </h1>
         <br/>
-       <a href ="index.php">Go Back</a>
+       <a href ="index.php">Go Back</a> <a href="../../admin/index.php">Admin Home</a>
     </center>
     </body>
 </html>

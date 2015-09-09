@@ -17,7 +17,8 @@
         /* Sets a default for variables */
         $product_id = '';
         $product = '';
-
+        $imageUpload = true;
+        
         if (isPostRequest() ) {
             
             $product_id = filter_input(INPUT_POST, 'product_id');
@@ -25,6 +26,25 @@
             $price = filter_input(INPUT_POST, 'price');
             $image = uploadProductImage();
             
+            if ( empty ($image) ) {
+                $imageUpload = false;
+                
+                $stmt = $db->prepare("UPDATE products SET product = :product, price = :price WHERE product_id = :product_id");
+                
+                $binds = array(
+                ":product_id" => $product_id,
+                ":product" => $product,
+                ":price" => $price
+            );
+            
+            $message = 'Update Failed';
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $message = 'Update Completed';
+            }
+            }
+            
+            if ($imageUpload === true)
+            {
             $stmt = $db->prepare("UPDATE products SET product = :product, price = :price, image = :image WHERE product_id = :product_id");
             
             $binds = array(
@@ -39,22 +59,19 @@
             $message = 'Update Completed';
             }
         }
+        }
         
         else {
             $product_id = filter_input(INPUT_GET, 'product_id');
         }
-
         /* statment selects from database */
         $stmt = $db->prepare("SELECT * FROM products WHERE product_id = :product_id");
-
         /* binds results into array */
         $binds = array(
             ":product_id" => $product_id
         );
-
         /* result = array */
         $results = array();
-
         /* test if statement executes */
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetch(PDO::FETCH_ASSOC);

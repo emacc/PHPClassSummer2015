@@ -57,11 +57,11 @@
         }
         ?>
 
-        <p>
+        <p><h2>
             <?php if (isset ($message)) {
                 echo $message;
             } ?>
-        </p>
+        </h2></p>
         
         <form method="post" action="#">
         Category <input type="text" name="category" value="<?php echo $category ?>"/></h4>

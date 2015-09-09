@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,7 +6,34 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+            require_once '../includes/session-start.req-inc.php';
+            require_once '../functions/cart-functions.php';
+            require_once '../functions/dbconnect.php';
+            require_once '../functions/util.php';
+            require_once '../functions/category-functions.php';
+            require_once '../functions/products-functions.php';
+                        
+            startCart();            
+            
+            $allCategories = getAllCategories();            
+            $allProducts = getAllProducts();
+            
+            $categorySelected = filter_input(INPUT_GET, 'cat_id');
+            $action = filter_input(INPUT_POST, 'action');
+                       
+            
+            if ( $action === 'buy' ) {
+                $productID = filter_input(INPUT_POST, 'product_id');
+                addToCart($productID);
+                
+            }
+                  
+           
+            include_once '../includes/categories.html.php';
+            include_once '../includes/products.html.php';
+            
+            
+            
         ?>
     </body>
 </html>

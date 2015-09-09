@@ -20,8 +20,9 @@
          <table class="table-hover" border="2">
             <thead>
                 <tr>
+                    <th>product_id</th>
                     <th>category_id</th>
-                    <th>category</th>
+                    <th>product</th>
                     <th>price</th>
                     <th>image</th>
                    
@@ -31,6 +32,7 @@
             <tr>
                <?php /* Displays database info */?>
                 <td><?php echo $row['product_id']; ?></td>
+                <td><?php echo $row['category_id']; ?></td>
                 <td><?php echo $row['product']; ?></td>
                 <td><?php echo $row['price']; ?></td>
                 <td><?php if ( empty($row['image']) ) : ?>

@@ -35,11 +35,12 @@
         $address = '';
         $phone = '';
         $website = '';
+        $birthday = '';
         $image = '';
         
 
         if (isPostRequest() ) {
-            
+            // Get post values to populate fields
             $address_group_id = filter_input(INPUT_POST, 'address_group_id');
             $address_id = filter_input(INPUT_POST, 'address_id');
             $fullname = filter_input(INPUT_POST, 'fullname');
@@ -47,11 +48,12 @@
             $address = filter_input(INPUT_POST, 'address');
             $phone = filter_input(INPUT_POST, 'phone');
             $website = filter_input(INPUT_POST, 'website');
+            $birthday = filter_input(INPUT_POST, 'birthday');
             $image = filter_input(INPUT_POST, 'upfile');
             $img = uploadProductImage();
           
             
-          
+            // function to update database
             updateNoImg($address_group_id, $address_id, $user_id, $fullname, $email, $address, $phone, $website, $img);
             
         }
@@ -59,7 +61,8 @@
         else {
             $address_id = filter_input(INPUT_GET, 'address_id');
         }
-
+           
+        //fill variables from database function
         $results = getAddress($address_id, $user_id);
         $address_group_id = $results['address_group_id'];
         $fullname = $results['fullname'];
@@ -95,6 +98,7 @@
             } ?>
         </p>
         
+        <!-- update form -->
         <form method="post" action="#" enctype="multipart/form-data">
         Address Group:
             <select name="address_group_id">
@@ -117,6 +121,8 @@
         phone <input type="text" name="phone" value="<?php echo $phone ?>"/>
         <br />
         website <input type="text" name="website" value="<?php echo $website ?>"/>
+        <br />
+        birthday <input type="date" name="birthday" value="<?php echo $birthday ?>"/>
         <br />
         <?php if ( empty($image) ) : ?>
                     No Image

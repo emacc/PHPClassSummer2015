@@ -36,6 +36,7 @@
        include '../includes/errors.php';
         ?>
         
+        <!-- nav bar -->
         <div class="nav">
             <img class="navimg" src="../images/logo4.png"/>
             <img class="navimgtext" src="../images/ab_text_only.png"/>
@@ -50,6 +51,8 @@
         
 <center>
 <!--       <div id="wrapperRead">-->
+
+        <!-- table start -->
         <div class="datagridRead">
          <table border="1">
             <?php foreach($address as $row): ?>

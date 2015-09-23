@@ -12,6 +12,8 @@
         include_once '../../functions/category-functions.php';
         include_once '../../functions/products-functions.php';
         include_once '../../functions/util.php';
+        require_once '../../includes/session-start.req-inc.php';
+        require_once '../../includes/access-required.html.php';
         
         
         $categories = getAllCategories();

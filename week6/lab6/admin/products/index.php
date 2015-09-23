@@ -11,7 +11,9 @@
         /* Connect to DB and include functions */
         include_once '../../functions/dbconnect.php';
         include_once '../../functions/products-functions.php';
-
+require_once '../../includes/session-start.req-inc.php';
+        require_once '../../includes/access-required.html.php';
+        
         $products = getAllProducts();
         
         ?>

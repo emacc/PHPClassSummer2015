@@ -9,6 +9,8 @@
         <?php
             
          include_once '../../functions/dbconnect.php';
+         require_once '../../includes/session-start.req-inc.php';
+        require_once '../../includes/access-required.html.php';
         
         $product_id = filter_input(INPUT_GET, 'product_id');
         

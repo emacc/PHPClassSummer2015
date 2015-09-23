@@ -68,7 +68,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f1', end
     
     height: inherit;
     
-    font: normal 12px/150% Arial, Helvetica, sans-serif; 
+    font: normal 16px/150% 'Josefin Sans', sans-serif, Arial, Helvetica;
 /*    background: #fff; */
     overflow: hidden; 
            -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
@@ -356,7 +356,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f1', end
 #searchMessage
 {
     position: absolute;
-    top: 77%;
+    top: 80%;
     left: 37%;
 }
 

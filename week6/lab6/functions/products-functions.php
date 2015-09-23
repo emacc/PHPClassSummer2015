@@ -168,7 +168,7 @@ function getProductByCategoryId($category_id) {
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
             
-            return true;
+            return $results;
         }
      return false;
 }

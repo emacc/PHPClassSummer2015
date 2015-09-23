@@ -5,7 +5,7 @@
 <?php if ( isset($allCategories) ) : ?>
 <ul>    
     <?php foreach ($allCategories as $row): ?>
-        <li><a href="?cat_id=<?php echo $row['category_id']; ?>"><?php echo $row['category']; ?></a></li>    
+        <li><a href="?category_id=<?php echo $row['category_id']; ?>"><?php echo $row['category']; ?></a></li>    
     <?php endforeach; ?>        
 <?php endif; ?>
 </ul>

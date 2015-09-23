@@ -17,6 +17,7 @@
         /* Sets a default for variables */
         $product_id = '';
         $product = '';
+        $price = '';
         $imageUpload = true;
         
         if (isPostRequest() ) {

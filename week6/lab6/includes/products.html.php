@@ -2,7 +2,7 @@
 
 <?php if ( isset($allProducts) && count($allProducts) > 0 ) : ?>
 
-<table>
+<table class="table-hover">
 
     <?php foreach ($allProducts as $row): ?>
         <tr>

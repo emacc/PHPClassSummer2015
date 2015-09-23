@@ -43,10 +43,8 @@ function isValidCategory($value) {
     return true;
 }
 
-function getCategoryById() {
+function getCategoryById($category_id) {
     $db = dbconnect();
-    
-    $category_id = filter_input(INPUT_GET, 'category_id');
     
     $stmt = $db->prepare("SELECT * FROM categories WHERE category_id = :category_id");
         $binds = array(

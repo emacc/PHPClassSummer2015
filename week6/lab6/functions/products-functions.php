@@ -156,3 +156,19 @@ function getProduct($id) {
     return $results;
     
 }
+
+function getProductByCategoryId($category_id) {
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM products WHERE category_id = :category_id");
+        $binds = array(
+            ":category_id" => $category_id
+        );
+        $results = array();
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+            
+            return true;
+        }
+     return false;
+}

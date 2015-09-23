@@ -4,11 +4,15 @@
         <meta charset="UTF-8">
         <title>View Categories</title>
     </head>
-    <body><center>
+    <body>
+    <center>
         <?php
         /* Connect to DB and include functions */
         include_once '../../functions/dbconnect.php';
         include_once '../../functions/products-functions.php';
+        include_once '../../includes/session-start.req-inc.php';
+        include_once '../../includes/access-required.html.php';
+        
         
         $db = dbconnect();
         

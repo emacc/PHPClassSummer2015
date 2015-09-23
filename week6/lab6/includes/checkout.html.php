@@ -7,15 +7,16 @@
             <td><?php echo $row['product']; ?></td>
             <td><?php echo $row['price']; ?></td>
         </tr>    
+        <?php $total += $row['price']; ?>
     <?php endforeach; ?>   
 
          <tr>            
             <td>Total</td>
-            <td><?php echo $total; ?></td>
+            <td><?php echo $total;?></td>
         </tr>  
 </table>
  <?php else: ?>       
-        <h2>No Products Found</h2>
-
+        <h2>Cart Is Empty</h2>
 <?php endif; ?>
+
 

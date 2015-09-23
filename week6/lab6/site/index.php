@@ -2,9 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <title></title>
     </head>
     <body>
+    <center>
         <?php
             require_once '../includes/session-start.req-inc.php';
             require_once '../functions/cart-functions.php';
@@ -15,10 +17,17 @@
                         
             startCart();            
             
+             
+            
             $allCategories = getAllCategories();            
             $allProducts = getAllProducts();
             
-            $categorySelected = filter_input(INPUT_GET, 'cat_id');
+            $categorySelected = filter_input(INPUT_GET, 'category_id');
+            
+            if (NULL != $categorySelected) {
+                $allProducts = getProductByCategoryId($categorySelected);
+            }
+            
             $action = filter_input(INPUT_POST, 'action');
                        
             
@@ -27,7 +36,7 @@
                 addToCart($productID);
                 
             }
-                  
+                         
            
             include_once '../includes/categories.html.php';
             include_once '../includes/products.html.php';
@@ -35,5 +44,7 @@
             
             
         ?>
+        <a href="checkout.php">View your cart</a>
+    </center>
     </body>
 </html>

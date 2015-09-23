@@ -211,14 +211,15 @@ function orderContacts($orderByColumn, $sortOrder, $user_id){
     
 }
 
-function searchContacts($column, $search){
+function searchContacts($column, $search, $user_id){
     $db = dbconnect();
            
-    $stmt = $db->prepare("SELECT * FROM address WHERE $column LIKE :search");
+    $stmt = $db->prepare("SELECT * FROM address WHERE user_id = :user_id AND $column LIKE :search");
 
     $search = '%'.$search.'%';
     $binds = array(
-        ":search" => $search
+        ":search" => $search,
+        ":user_id" => $user_id
     );
     $results = array();
     $searchMessage = "Search failed to return results.";

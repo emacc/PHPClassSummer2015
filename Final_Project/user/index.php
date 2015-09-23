@@ -55,7 +55,7 @@
         */
        $column = filter_input(INPUT_GET, 'searchColumn');
        $search = filter_input(INPUT_GET, 'searchQuery');
-       $contacts = searchContacts($column, $search);
+       $contacts = searchContacts($column, $search, $user_id);
       }
                
        // var_dump($user_id);

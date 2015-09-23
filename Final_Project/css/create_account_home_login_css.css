@@ -27,6 +27,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f1', end
     margin-bottom: 75px;
 }
 
+
 /* navy #003268 
    teal #9dc3dd
 */
@@ -121,6 +122,7 @@ aside {
 #h1 
 {
     width: 100%;
+    color: #003366;
 }
 
 #h3

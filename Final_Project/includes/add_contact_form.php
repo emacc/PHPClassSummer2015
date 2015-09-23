@@ -3,7 +3,9 @@
             Address Group:
             <select name="address_group_id">
             <?php foreach ($address_groups as $row): ?>
-                <option value="<?php echo $row['address_group_id']; ?>">
+                <option value="<?php echo $row['address_group_id']; ?>" <?php if( intval($address_group_id) === $row['address_group_id']) : ?>
+                        selected="selected"
+                        <?php endif; ?>>
                     <?php echo $row['address_group']; ?>
                 </option>
             <?php endforeach; ?>
@@ -11,17 +13,17 @@
             <br />
             
             
-            Full Name <input type="text" name="fullname" /> 
+            Full Name <input type="text" name="fullname" value="<?php echo $fullname; ?>"/> 
             <br />
-            email: <input type="text" name="email" /> 
+            email: <input type="text" placeholder="example@example.com" name="email" value="<?php echo $email; ?>"/> 
             <br />
-            address: <input type="text" name="address" /> 
+            address: <input type="text" name="address" value="<?php echo $address; ?>" /> 
             <br />
-            phone: <input type="text" name="phone"  /> 
+            phone: <input type="text" placeholder="EX: (XXX)XXX-XXXX" name="phone" value="<?php echo $phone; ?>" /> 
             <br />
-            website: <input type="text" name="website"  /> 
+            website: <input type="text" name="website" value="<?php echo $website; ?>" /> 
             <br />
-            birthday: <input type="date" name="birthday" /> 
+            birthday: <input type="date" name="birthday"value="<?php echo $birthday; ?>" /> 
             <br />
             Image: <input type="file" name="upfile" /> 
             <br />

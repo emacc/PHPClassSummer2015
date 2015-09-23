@@ -9,7 +9,7 @@ function uploadProductImage() {
         // Undefined | Multiple Files | $_FILES Corruption Attack
         // If this request falls under any of them, treat it invalid.
         if ( !isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error']) ) {       
-            throw new RuntimeException('Invalid parameters.');
+            throw new RuntimeException($error = 'Invalid parameters.');
         }
 
         // Check $_FILES['upfile']['error'] value.

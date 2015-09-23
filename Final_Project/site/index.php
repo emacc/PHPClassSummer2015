@@ -3,18 +3,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        
+        <!-- Style Sheet -->
+        <link rel="stylesheet" type="text/css" href="../css/create_account_home_login_css.css">
+        
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+                
+        <title>Login</title>
     </head>
     <body>
+        <div id="wrapper">
         <?php
         
             require_once '../includes/session-start.req-inc.php';
-            
             include_once '../functions/dbconnect.php';
             include_once '../functions/user_functions.php';
             include_once '../functions/util.php';
             
-            include_once '../includes/loginform.html.php';
+            $email = "";
             
             if ( isPostRequest() ) {
                 
@@ -41,9 +49,22 @@
                 header("Location: ../user/index.php");
                 exit();
             }
-            
-           
-             include '../includes/errors.php'; ?>
-        
+            ?>
+            <center>
+                <div id="test">
+                <img id="loginimg" src="../images/logo3.png"/>
+                <div id="loginbox">
+                <?php include_once '../includes/loginform.html.php'; ?>
+                <?php if (isset($errors)) : ?>
+                <h3 id="loginh3">Login Failed:</h3>
+                <div id="loginError">
+                <?php include '../includes/errors.php'; endif; ?>
+                </div>
+                </div>
+                </div>
+            </center>
+        </div>
+    </center>
+        </div>
     </body>
 </html>

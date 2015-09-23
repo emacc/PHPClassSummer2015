@@ -1,0 +1,282 @@
+#wrapper
+{
+    margin: auto;
+}
+
+.nav {
+    display: block;
+    min-width: 900px;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f5f1+0,d8d7d2+100 */
+background: rgb(245,245,241); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(245,245,241,1) 0%, rgba(216,215,210,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(245,245,241,1)), color-stop(100%,rgba(216,215,210,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(245,245,241,1) 0%,rgba(216,215,210,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(245,245,241,1) 0%,rgba(216,215,210,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(245,245,241,1) 0%,rgba(216,215,210,1) 100%); /* IE10+ */
+//background: linear-gradient(to bottom,  rgba(245,245,241,1) 0%,rgba(216,215,210,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f1', endColorstr='#d8d7d2',GradientType=0 ); /* IE6-9 */
+
+    
+    //background-color: lightgray;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    border-bottom: #003366 5px solid;
+    margin-bottom: 75px;
+}
+
+/* navy #003268 
+   teal #9dc3dd
+*/
+
+/*.addPageLogo {
+    height: 100px;
+    width: 200px;
+}*/
+
+.addLoginbtn {
+   float:right;
+   //padding: 10px 44px 0px 40px;
+   font-family: 'Josefin Sans', sans-serif, Arial, Helvetica;
+   text-align: center;
+   font-size: 24px;
+   border-radius: 3px;
+   color: white;
+   margin-right: 44px;
+   margin-top: 12px;
+   width: 100px;
+   height: 40px;
+   text-decoration: none;
+   padding-top: 5px;
+   
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
+    background: rgb(0,183,234); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* IE10+ */
+    //background: radial-gradient(ellipse at center,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+   
+}
+
+.addLoginbtn:hover
+{
+   width: 98px;
+   height: 38px;
+   border: navy 1px solid;
+   padding-top: 4px;
+}
+
+#wrapper2 
+{
+    width: 900px;
+    padding: 0;
+    margin: auto;
+    min-width: 800px;
+}
+
+body {
+    //background-color: gray;
+    margin: 0;
+    padding: 0;
+    font-family: 'Marcellus', serif;
+    color: #000033;
+}
+
+section {
+    float: left;
+    width: 46%;
+    position: relative;
+}
+
+#addImg {
+    width: 100%;
+    margin: 0;
+    padding-top: 5%;
+}
+
+aside {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 7px 25px 10px 25px;
+    float: right;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+#errors {
+    float: right;
+}
+
+#createUserForm
+{
+    width: 49%;
+    margin: 0 auto;
+}
+
+#h1 
+{
+    width: 100%;
+}
+
+#h3
+{
+    color: #ff0000;
+    margin-left: 46px;
+}
+
+.addUserSubmit
+{
+    margin-left: 150px;
+    height: 35px;
+    width: 70px;
+    font-family: 'Josefin Sans', sans-serif, Arial, Helvetica;
+    color: white;
+    font-size: 16px;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
+    background: rgb(0,183,234); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* IE10+ */
+    //background: radial-gradient(ellipse at center,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border : solid 0px #e6e6e6;
+    border-radius : 3px;
+}
+
+.addUserSubmit:hover 
+{
+    border : solid 1px navy;
+}
+
+
+#createUserErrors
+{
+    width: 80%;
+    margin: auto;
+    margin-left: 56px;
+    color: #ff0000;
+}
+
+input {
+    margin-top: 3px;
+    padding: 4px;
+}
+
+#homeimg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#test 
+{
+    margin-top: 5%;
+    min-width: 437px;
+}
+
+#loginimg
+{
+    width: 195px;
+}
+
+#loginbox
+{
+    margin-top: 8px;
+    margin-bottom: 25px;
+    padding: 10px 32px 10px 28px;
+    width: 380px;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+/*#center
+{
+   margin: 0;
+   position: fixed;    
+   top: 40%;     
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+}*/
+
+#loginText
+{
+    margin-bottom: 1px;
+}
+
+#loginh4
+{
+    margin-top: 5px;
+}
+
+
+.loginLink:link,
+.loginLink:visited
+{
+    text-decoration: none;
+    color: #0000cc;
+}
+
+.loginLink:hover
+{
+    color: #0000cc;
+    text-decoration: underline;
+}
+
+.loginLink:active
+{
+    color: #00ccff;
+}
+
+#loginh3
+{
+    color: #ff0000;
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+#loginError
+{
+    color: #ff0000;
+    text-align: left;
+    margin-left: 60px;
+    margin-right: 40px;
+}
+
+.loginSubmit
+{
+    margin-top: 8px;
+    height: 35px;
+    width: 70px;
+    font-family: 'Josefin Sans', sans-serif, Arial, Helvetica;
+    color: white;
+    font-size: 16px;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
+    background: rgb(0,183,234); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* IE10+ */
+    //background: radial-gradient(ellipse at center,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border : solid 0px #e6e6e6;
+    border-radius : 3px;
+}
+
+.loginSubmit:hover
+{
+    border : solid 1px navy;
+}

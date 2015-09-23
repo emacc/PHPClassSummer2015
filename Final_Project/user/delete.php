@@ -57,7 +57,7 @@
         
         ?>
         
-        <div id="nav">
+        <div class="nav">
             <img class="navimg" src="../images/logo4.png"/>
             <img class="navimgtext" src="../images/ab_text_only.png"/>
             <form action='../sessiondelete.php' method="post">

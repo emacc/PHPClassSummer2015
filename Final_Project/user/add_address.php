@@ -2,7 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Add Address</title>
+        
+         <!-- Style Sheet -->
+        <link rel="stylesheet" type="text/css" href="../css/user_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/create_account_home_login_css.css">
+        
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
     </head>
     <body>
         <?php
@@ -91,6 +100,16 @@
         
         ?>
         
+        <div class="nav">
+            <img class="navimg" src="../images/logo4.png"/>
+            <img class="navimgtext" src="../images/ab_text_only.png"/>
+            <form action='../sessiondelete.php' method="post">
+            <input class="UserHomeLogout" type="submit" name="action" value="Log Out">
+            </form>
+            <a class="userAddContactBtn" href="add_address.php">Add Contact</a>
+            <a class="userHomeBtn" href="index.php">Home</a>
+        </div>
+    <center>
         <h1>Add Address</h1>
         
         <?php if ( isset($errors) && count($errors) > 0 ) : ?>
@@ -107,6 +126,6 @@
         <?php include_once '../includes/add_contact_form.php'; ?>
         
         
-        
+    </center>
     </body>
 </html>

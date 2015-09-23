@@ -64,7 +64,7 @@
                 }
         }
         ?>
-        <div id="nav">
+        <div class="nav">
             <a class="addLoginbtn" href="index.php" title="login">Login</a>
         </div>
                

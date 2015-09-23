@@ -1,6 +1,6 @@
 <!-- creates form using get method(URL) -->
 <div>
-<form style="float: left; position: relative;" action="#" method="get">
+<form style="float: right; position: relative;" action="#" method="get">
     <label >Sort table by:</label>  
     
     <!-- <select> creates a drop down menu -->

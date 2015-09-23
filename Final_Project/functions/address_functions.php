@@ -204,8 +204,8 @@ function orderContacts($orderByColumn, $sortOrder, $user_id){
         $orderMessage = "Re-Order Completed Successfully!";
       }
     ?>
-    <p>
-        <?php echo $orderMessage; ?></p>
+    <div id="orderMsg">
+        <?php echo $orderMessage; ?></div>
     <?php
         return $results;
     
@@ -230,8 +230,8 @@ function searchContacts($column, $search, $user_id){
     }
    
     ?>
-    <p>
-        <?php echo $searchMessage; ?></p>
+    <div id="searchMessage">
+        <?php echo $searchMessage; ?></div>
     <?php
     return $results;
    

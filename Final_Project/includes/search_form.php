@@ -1,4 +1,4 @@
-<div>
+<div id="searchForm">
     
 <!-- creates form using get method(URL) -->
 <form action="#" method="get">

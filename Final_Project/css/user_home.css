@@ -345,3 +345,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f1', end
 .datagridRead tbody tr:first-child {border-top: 1px solid #003366;}
 .datagridRead tbody tr:last-child td {border-bottom: 1px solid #003366; text-align: center;}
 .datagridRead table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #003366) );background:-moz-linear-gradient( center top, #006699 5%, #003366 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#003366');background-color:#006699; color:#FFFFFF; font-size: 15px; font-weight: bold; } 
+
+#searchMessage
+{
+    position: absolute;
+    top: 71.5%;
+    left: 37%;
+}
+
+#orderMsg
+{
+     position: absolute;
+    left: 73%;
+    top:31%;
+}
+
+#searchForm
+{
+    width: 25%;
+    margin-top: 1%;
+    margin-right: 209px;
+}

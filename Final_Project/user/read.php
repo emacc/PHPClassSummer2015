@@ -70,7 +70,7 @@
                     <td><a href="mailto:<?php echo $row['email']; ?>"><?php echo $row['email']; ?></a></td>
                 </tr>
                     <th>address</th>
-                    <td><?php echo $row['address']; ?></td>
+                    <td><a href="http://maps.google.com/?q=<?php echo $row['address']; ?>"><?php echo $row['address']; ?></td>
                 </tr>
                 <tr>
                     <th>phone</th>
@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <th>website</th>
-                    <td><a href="www.google.com" target="_blank"><?php echo $row['website']; ?></a></td>
+                    <td><a href="<?php echo $row['website']; ?>" target="_blank"><?php echo $row['website']; ?></a></td>
                 </tr>
                 <tr>
                     <th>birthday</th>

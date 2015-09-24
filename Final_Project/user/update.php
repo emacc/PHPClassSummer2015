@@ -70,7 +70,7 @@
         $address = $results['address'];
         $phone = $results['phone'];
         $website = $results['website'];
-        //$birthday = $results['birthday'];
+        $birthday = $results['birthday'];
         $image = $results['image'];
 //        /* statment selects from database */
 //        $stmt = $db->prepare("SELECT * FROM address WHERE address_id = :address_id AND user_id = :user_id");
@@ -123,7 +123,7 @@
         <br />
         website <input type="text" name="website" value="<?php echo $website ?>"/>
         <br />
-        birthday <input type="date" name="birthday" value="<?php date("m-d-Y", strtotime(['birthday'])); ?>"/>
+        birthday <input type="date" name="birthday" value="<?php echo date("Y-m-d", strtotime($results['birthday'])); ?>"/>
         <br />
         <?php if ( empty($image) ) : ?>
                     No Image

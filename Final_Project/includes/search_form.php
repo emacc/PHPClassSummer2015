@@ -36,7 +36,6 @@
         <!-- reset button -->
         <input type="hidden" name="action2" value="reset" />
         <input type="reset" value="Reset" />
-        <?php        var_dump($search); ?>
     </fieldset>            
 </form>
 </div>

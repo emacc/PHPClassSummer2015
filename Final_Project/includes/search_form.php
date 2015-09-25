@@ -27,14 +27,16 @@
         <input id="placeholder" name="searchQuery" type="search" placeholder="Search...." />
     <br/>
     
-        <!-- reset button -->
-        <input type="hidden" name="action" value="reset" />
-        <input class="btn-style2" type="reset" value="Reset" />
+        
         
         <!-- search submit button -->
         <input type="hidden" name="action" value="search" />
-        <input class="btn-style2" type="submit" value="Submit" />
+        <input type="submit" value="Submit" />
                 
+        <!-- reset button -->
+        <input type="hidden" name="action2" value="reset" />
+        <input type="reset" value="Reset" />
+        <?php        var_dump($search); ?>
     </fieldset>            
 </form>
 </div>
